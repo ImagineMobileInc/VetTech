@@ -1,57 +1,92 @@
 // js/main.js
 
-// Import Firebase from firebase-config.js
+// Initialize Firebase from firebase-config.js
 initializeFirebase();
+const auth = firebase.auth();
 const db = firebase.firestore();
 
-function showCalculator(calcId) {
-    document.querySelectorAll('.calculator').forEach(el => el.classList.remove('active'));
-    document.getElementById(calcId).classList.add('active');
+// Function to show a selected calculator and hide the list
+function selectCalculator(calcId) {
+    document.getElementById('calc-list').style.display = 'none';
+    document.querySelectorAll('.calculator').forEach(el => el.style.display = 'none');
+    document.getElementById(calcId).style.display = 'block';
 }
 
-// Check if user has visited before and show disclaimer/email prompt if first time
+// Function to return to the calculator list
+function backToList() {
+    document.getElementById('calc-list').style.display = 'block';
+    document.querySelectorAll('.calculator').forEach(el => el.style.display = 'none');
+}
+
+// Authentication and Initialization Logic
 window.onload = function() {
-    const hasVisited = localStorage.getItem('hasVisited');
-    const urlParams = new URLSearchParams(window.location.search);
-    const calc = urlParams.get('calc') || 'aagradient';
-    
-    if (!hasVisited) {
-        $('#disclaimerModal').modal({ backdrop: 'static', keyboard: false }); // Prevent closing without submission
-        document.getElementById('submitEmail').addEventListener('click', function() {
-            const email = document.getElementById('userEmail').value;
-            if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { // Basic email validation
-                // Store email in Firestore
-                db.collection('users').add({
+    // Check authentication state
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            // User is signed in, show the calculator list
+            document.getElementById('calc-list').style.display = 'block';
+            $('#loginModal').modal('hide');
+            console.log('User logged in:', user.email);
+        } else {
+            // No user signed in, show login modal
+            document.getElementById('calc-list').style.display = 'none';
+            $('#loginModal').modal({ backdrop: 'static', keyboard: false });
+            console.log('No user logged in');
+        }
+    });
+
+    // Login button event listener
+    document.getElementById('loginBtn').addEventListener('click', () => {
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value.trim();
+
+        if (!email || !password) {
+            document.getElementById('authMessage').innerHTML = 'Please enter both email and password.';
+            return;
+        }
+
+        auth.signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                document.getElementById('authMessage').innerHTML = 'Login successful!';
+                setTimeout(() => {
+                    $('#loginModal').modal('hide');
+                }, 1000); // Brief delay to show success message
+            })
+            .catch((error) => {
+                document.getElementById('authMessage').innerHTML = `Error: ${error.message}`;
+            });
+    });
+
+    // Create account button event listener
+    document.getElementById('createAccountBtn').addEventListener('click', () => {
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value.trim();
+
+        if (!email || !password) {
+            document.getElementById('authMessage').innerHTML = 'Please enter both email and password.';
+            return;
+        }
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                document.getElementById('authMessage').innerHTML = 'Account created and logged in!';
+                // Store user email in Firestore
+                db.collection('users').doc(userCredential.user.uid).set({
                     email: email,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
                 })
                 .then(() => {
-                    localStorage.setItem('hasVisited', 'true');
-                    $('#disclaimerModal').modal('hide');
-                    showCalculator(calc);
+                    console.log('User data stored in Firestore');
+                    setTimeout(() => {
+                        $('#loginModal').modal('hide');
+                    }, 1000);
                 })
                 .catch((error) => {
-                    console.error('Error storing email:', error);
-                    alert('Failed to save email. Please try again.');
+                    console.error('Error storing user data:', error);
                 });
-            } else {
-                alert('Please enter a valid email address.');
-            }
-        });
-    } else {
-        showCalculator(calc);
-    }
-};
-function showCalculator(calcId) {
-    // Hide all calculators
-    document.querySelectorAll('.calculator').forEach(el => el.classList.remove('active'));
-    // Show the selected calculator
-    document.getElementById(calcId).classList.add('active');
-}
-
-// Set default calculator on page load
-window.onload = function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const calc = urlParams.get('calc') || 'aagradient'; // Default to A-a Gradient
-    showCalculator(calc);
+            })
+            .catch((error) => {
+                document.getElementById('authMessage').innerHTML = `Error: ${error.message}`;
+            });
+    });
 };
