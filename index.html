@@ -13,38 +13,37 @@
     </nav>
     <div class="container-fluid mt-3">
         <div class="row">
-            <div class="col-md-3">
-                <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('aagradient')">A-a Gradient</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('anesthesia')">Anesthesia Drug Calc</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('aniongap')">Anion Gap</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('bloodgas')">Blood Gas Analysis</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('bicarb')">Bicarbonate Dosing</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('bsa')">Body Surface Area</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('combfluids')">Combining Fluids</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('cri')">Constant Rate Infusion Calc</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('dosing')">Dosing Calc</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('driprate')">Drip Rates</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('echo')">Echo Values</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('energy')">Energy Requirements</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('equinefluids')">Equine Fluids</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('fluidplan')">Fluid Plan</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('fena')">Fractional Excretion of Sodium</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('maintfluids')">Maintenance Fluids</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('osmolality')">Osmolality</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('percsol')">Percentage Solutions</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('tempconv')">Temperature Conversion</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('transfusion')">Transfusion Calc</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('weightconv')">Weight Conversion</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('ivfluidrate')">IV Fluid Rate Calculator</a>
-    <a href="#" class="list-group-item list-group-item-action" onclick="showCalculator('gestation')">Gestation Period Calculator</a>
-</div>
-            </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
+                <div id="calc-list" class="list-group" style="display: none;">
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('aagradient')">A-a Gradient</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('anesthesia')">Anesthesia Drug Calc</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('aniongap')">Anion Gap</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('bloodgas')">Blood Gas Analysis</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('bicarb')">Bicarbonate Dosing</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('bsa')">Body Surface Area</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('combfluids')">Combining Fluids</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('cri')">Constant Rate Infusion Calc</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('dosing')">Dosing Calc</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('driprate')">Drip Rates</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('echo')">Echo Values</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('energy')">Energy Requirements</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('equinefluids')">Equine Fluids</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('fluidplan')">Fluid Plan</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('fena')">Fractional Excretion of Sodium</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('maintfluids')">Maintenance Fluids</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('osmolality')">Osmolality</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('percsol')">Percentage Solutions</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('tempconv')">Temperature Conversion</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('transfusion')">Transfusion Calc</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('weightconv')">Weight Conversion</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('ivfluidrate')">IV Fluid Rate Calculator</button>
+                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('gestation')">Gestation Period Calculator</button>
+                </div>
                 <div id="content">
-                    <!-- A-a Gradient Calculator -->
-                    <div id="aagradient" class="calculator">
+                    <!-- A-a Gradient -->
+                    <div id="aagradient" class="calculator" style="display: none;">
                         <h2>A-a Gradient Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
                         <div class="form-group">
                             <label for="aagradient-fio2">FiO2 (%):</label>
                             <input type="number" class="form-control" id="aagradient-fio2" step="0.1" min="0" max="100">
@@ -64,13 +63,12 @@
                         <button class="btn btn-primary" onclick="calculateAAGradient()">Calculate</button>
                         <div id="aagradient-result" class="mt-3"></div>
                         <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#aagradientInfoModal">Info</button>
-                        <!-- Info Modal -->
                         <div class="modal fade" id="aagradientInfoModal" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title">A-a Gradient Information</h5>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
                                     </div>
                                     <div class="modal-body">
                                         <p>The A-a gradient assesses lung gas exchange efficiency.</p>
@@ -84,821 +82,987 @@
                         </div>
                     </div>
                     <!-- Anesthesia Drug Calc -->
-<div id="anesthesia" class="calculator">
-    <h2>Anesthesia Drug Calculator</h2>
-    <div class="form-group">
-        <label for="anesthesia-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="anesthesia-weight" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="anesthesia-dose">Dose (mg/kg):</label>
-        <input type="number" class="form-control" id="anesthesia-dose" step="0.1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateAnesthesia()">Calculate</button>
-    <div id="anesthesia-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#anesthesiaInfoModal">Info</button>
-    <div class="modal fade" id="anesthesiaInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Anesthesia Drug Calculator Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Calculates the total drug amount needed for anesthesia based on animal weight and dose.</p>
-                    <p>Formula: Weight (kg) × Dose (mg/kg) = Total Drug (mg)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Anion Gap -->
-<div id="aniongap" class="calculator">
-    <h2>Anion Gap Calculator</h2>
-    <div class="form-group">
-        <label for="aniongap-na">Na⁺ (mEq/L):</label>
-        <input type="number" class="form-control" id="aniongap-na" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="aniongap-cl">Cl⁻ (mEq/L):</label>
-        <input type="number" class="form-control" id="aniongap-cl" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="aniongap-hco3">HCO₃⁻ (mEq/L):</label>
-        <input type="number" class="form-control" id="aniongap-hco3" step="0.1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateAnionGap()">Calculate</button>
-    <div id="aniongap-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#aniongapInfoModal">Info</button>
-    <div class="modal fade" id="aniongapInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Anion Gap Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Evaluates acid-base imbalances.</p>
-                    <p>Formula: Na⁺ - (Cl⁻ + HCO₃⁻) = Anion Gap (mEq/L)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Blood Gas Analysis -->
-<div id="bloodgas" class="calculator">
-    <h2>Blood Gas Analysis</h2>
-    <div class="form-group">
-        <label for="bloodgas-ph">pH:</label>
-        <input type="number" class="form-control" id="bloodgas-ph" step="0.01" min="0" max="14">
-    </div>
-    <div class="form-group">
-        <label for="bloodgas-pco2">PaCO₂ (mmHg):</label>
-        <input type="number" class="form-control" id="bloodgas-pco2" step="1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="bloodgas-hco3">HCO₃⁻ (mEq/L):</label>
-        <input type="number" class="form-control" id="bloodgas-hco3" step="0.1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateBloodGas()">Calculate</button>
-    <div id="bloodgas-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#bloodgasInfoModal">Info</button>
-    <div class="modal fade" id="bloodgasInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Blood Gas Analysis Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Interprets acid-base status based on pH, PaCO₂, and HCO₃⁻.</p>
-                    <p>Basic interpretation provided (e.g., acidosis, alkalosis).</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Bicarbonate Dosing -->
-<div id="bicarb" class="calculator">
-    <h2>Bicarbonate Dosing Calculator</h2>
-    <div class="form-group">
-        <label for="bicarb-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="bicarb-weight" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="bicarb-hco3">Current HCO₃⁻ (mEq/L):</label>
-        <input type="number" class="form-control" id="bicarb-hco3" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="bicarb-target">Target HCO₃⁻ (mEq/L):</label>
-        <input type="number" class="form-control" id="bicarb-target" step="0.1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateBicarb()">Calculate</button>
-    <div id="bicarb-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#bicarbInfoModal">Info</button>
-    <div class="modal fade" id="bicarbInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Bicarbonate Dosing Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Determines bicarbonate needed to correct metabolic acidosis.</p>
-                    <p>Formula: 0.3 × Weight (kg) × (Target HCO₃⁻ - Current HCO₃⁻)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Body Surface Area -->
-<div id="bsa" class="calculator">
-    <h2>Body Surface Area Calculator</h2>
-    <div class="form-group">
-        <label for="bsa-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="bsa-weight" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="bsa-species">Species:</label>
-        <select class="form-control" id="bsa-species">
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-        </select>
-    </div>
-    <button class="btn btn-primary" onclick="calculateBSA()">Calculate</button>
-    <div id="bsa-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#bsaInfoModal">Info</button>
-    <div class="modal fade" id="bsaInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Body Surface Area Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Estimates BSA for drug dosing (e.g., chemotherapy).</p>
-                    <p>Formula: BSA (m²) = K × (Weight (kg))^(2/3) / 100, where K = 10.1 (dogs), 10.0 (cats)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Combining Fluids -->
-<div id="combfluids" class="calculator">
-    <h2>Combining Fluids Calculator</h2>
-    <div class="form-group">
-        <label for="combfluids-vol1">Volume 1 (mL):</label>
-        <input type="number" class="form-control" id="combfluids-vol1" step="1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="combfluids-conc1">Concentration 1 (%):</label>
-        <input type="number" class="form-control" id="combfluids-conc1" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="combfluids-vol2">Volume 2 (mL):</label>
-        <input type="number" class="form-control" id="combfluids-vol2" step="1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="combfluids-conc2">Concentration 2 (%):</label>
-        <input type="number" class="form-control" id="combfluids-conc2" step="0.1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateCombFluids()">Calculate</button>
-    <div id="combfluids-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#combfluidsInfoModal">Info</button>
-    <div class="modal fade" id="combfluidsInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Combining Fluids Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Calculates the final concentration when mixing two fluids.</p>
-                    <p>Formula: [(Vol1 × Conc1) + (Vol2 × Conc2)] / (Vol1 + Vol2)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Constant Rate Infusion Calc -->
-<div id="cri" class="calculator">
-    <h2>Constant Rate Infusion Calculator</h2>
-    <div class="form-group">
-        <label for="cri-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="cri-weight" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="cri-dose">Dose Rate (μg/kg/min):</label>
-        <input type="number" class="form-control" id="cri-dose" step="0.01" min="0">
-    </div>
-    <div class="form-group">
-        <label for="cri-conc">Drug Concentration (mg/mL):</label>
-        <input type="number" class="form-control" id="cri-conc" step="0.01" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateCRI()">Calculate</button>
-    <div id="cri-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#criInfoModal">Info</button>
-    <div class="modal fade" id="criInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Constant Rate Infusion Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Determines infusion rate for a constant drug delivery.</p>
-                    <p>Formula: [Weight (kg) × Dose (μg/kg/min)] / [Concentration (mg/mL) × 1000] × 60 = mL/h</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Dosing Calc -->
-<div id="dosing" class="calculator">
-    <h2>Dosing Calculator</h2>
-    <div class="form-group">
-        <label for="dosing-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="dosing-weight" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="dosing-dose">Dose (mg/kg):</label>
-        <input type="number" class="form-control" id="dosing-dose" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="dosing-conc">Concentration (mg/mL):</label>
-        <input type="number" class="form-control" id="dosing-conc" step="0.1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateDosing()">Calculate</button>
-    <div id="dosing-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#dosingInfoModal">Info</button>
-    <div class="modal fade" id="dosingInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Dosing Calculator Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Calculates the volume of drug to administer.</p>
-                    <p>Formula: [Weight (kg) × Dose (mg/kg)] / Concentration (mg/mL) = Volume (mL)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Drip Rates -->
-<div id="driprate" class="calculator">
-    <h2>Drip Rates Calculator</h2>
-    <div class="form-group">
-        <label for="driprate-volume">Volume (mL):</label>
-        <input type="number" class="form-control" id="driprate-volume" step="1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="driprate-time">Time (hours):</label>
-        <input type="number" class="form-control" id="driprate-time" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="driprate-set">Drop Factor (drops/mL):</label>
-        <input type="number" class="form-control" id="driprate-set" step="1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateDripRate()">Calculate</button>
-    <div id="driprate-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#driprateInfoModal">Info</button>
-    <div class="modal fade" id="driprateInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Drip Rates Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Calculates IV drip rate for fluid administration.</p>
-                    <p>Formula: [Volume (mL) × Drop Factor (drops/mL)] / [Time (h) × 60] = drops/min</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                    <div id="anesthesia" class="calculator" style="display: none;">
+                        <h2>Anesthesia Drug Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="anesthesia-unit" id="anesthesia-metric" value="metric" checked>
+                                <label class="form-check-label" for="anesthesia-metric">Metric (kg)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="anesthesia-unit" id="anesthesia-imperial" value="imperial">
+                                <label class="form-check-label" for="anesthesia-imperial">Imperial (lb)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="anesthesia-weight">Weight:</label>
+                            <input type="number" class="form-control" id="anesthesia-weight" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="anesthesia-dose">Dose (mg/kg or mg/lb):</label>
+                            <input type="number" class="form-control" id="anesthesia-dose" step="0.1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateAnesthesia()">Calculate</button>
+                        <div id="anesthesia-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#anesthesiaInfoModal">Info</button>
+                        <div class="modal fade" id="anesthesiaInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Anesthesia Drug Calculator Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Calculates the total drug amount needed for anesthesia.</p>
+                                        <p>Formula: Weight (kg or lb) × Dose (mg/kg or mg/lb) = Total Drug (mg)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Anion Gap -->
+                    <div id="aniongap" class="calculator" style="display: none;">
+                        <h2>Anion Gap Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label for="aniongap-na">Na⁺ (mEq/L):</label>
+                            <input type="number" class="form-control" id="aniongap-na" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="aniongap-cl">Cl⁻ (mEq/L):</label>
+                            <input type="number" class="form-control" id="aniongap-cl" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="aniongap-hco3">HCO₃⁻ (mEq/L):</label>
+                            <input type="number" class="form-control" id="aniongap-hco3" step="0.1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateAnionGap()">Calculate</button>
+                        <div id="aniongap-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#aniongapInfoModal">Info</button>
+                        <div class="modal fade" id="aniongapInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Anion Gap Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Evaluates acid-base imbalances.</p>
+                                        <p>Formula: Na⁺ - (Cl⁻ + HCO₃⁻) = Anion Gap (mEq/L)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blood Gas Analysis -->
+                    <div id="bloodgas" class="calculator" style="display: none;">
+                        <h2>Blood Gas Analysis</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label for="bloodgas-ph">pH:</label>
+                            <input type="number" class="form-control" id="bloodgas-ph" step="0.01" min="0" max="14">
+                        </div>
+                        <div class="form-group">
+                            <label for="bloodgas-pco2">PaCO₂ (mmHg):</label>
+                            <input type="number" class="form-control" id="bloodgas-pco2" step="1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="bloodgas-hco3">HCO₃⁻ (mEq/L):</label>
+                            <input type="number" class="form-control" id="bloodgas-hco3" step="0.1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateBloodGas()">Calculate</button>
+                        <div id="bloodgas-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#bloodgasInfoModal">Info</button>
+                        <div class="modal fade" id="bloodgasInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Blood Gas Analysis Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Interprets acid-base status.</p>
+                                        <p>Basic interpretation provided (e.g., acidosis, alkalosis).</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bicarbonate Dosing -->
+                    <div id="bicarb" class="calculator" style="display: none;">
+                        <h2>Bicarbonate Dosing Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="bicarb-unit" id="bicarb-metric" value="metric" checked>
+                                <label class="form-check-label" for="bicarb-metric">Metric (kg)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="bicarb-unit" id="bicarb-imperial" value="imperial">
+                                <label class="form-check-label" for="bicarb-imperial">Imperial (lb)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bicarb-weight">Weight:</label>
+                            <input type="number" class="form-control" id="bicarb-weight" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="bicarb-hco3">Current HCO₃⁻ (mEq/L):</label>
+                            <input type="number" class="form-control" id="bicarb-hco3" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="bicarb-target">Target HCO₃⁻ (mEq/L):</label>
+                            <input type="number" class="form-control" id="bicarb-target" step="0.1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateBicarb()">Calculate</button>
+                        <div id="bicarb-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#bicarbInfoModal">Info</button>
+                        <div class="modal fade" id="bicarbInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Bicarbonate Dosing Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Determines bicarbonate needed to correct metabolic acidosis.</p>
+                                        <p>Formula: 0.3 × Weight (kg) × (Target HCO₃⁻ - Current HCO₃⁻)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Body Surface Area -->
+                    <div id="bsa" class="calculator" style="display: none;">
+                        <h2>Body Surface Area Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="bsa-unit" id="bsa-metric" value="metric" checked>
+                                <label class="form-check-label" for="bsa-metric">Metric (kg)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="bsa-unit" id="bsa-imperial" value="imperial">
+                                <label class="form-check-label" for="bsa-imperial">Imperial (lb)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bsa-weight">Weight:</label>
+                            <input type="number" class="form-control" id="bsa-weight" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="bsa-species">Species:</label>
+                            <select class="form-control" id="bsa-species">
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateBSA()">Calculate</button>
+                        <div id="bsa-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#bsaInfoModal">Info</button>
+                        <div class="modal fade" id="bsaInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Body Surface Area Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Estimates BSA for drug dosing.</p>
+                                        <p>Formula: BSA (m²) = K × (Weight (kg))^(2/3) / 100, K = 10.1 (dogs), 10.0 (cats)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Combining Fluids -->
+                    <div id="combfluids" class="calculator" style="display: none;">
+                        <h2>Combining Fluids Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="combfluids-unit" id="combfluids-metric" value="metric" checked>
+                                <label class="form-check-label" for="combfluids-metric">Metric (mL)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="combfluids-unit" id="combfluids-imperial" value="imperial">
+                                <label class="form-check-label" for="combfluids-imperial">Imperial (oz)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="combfluids-vol1">Volume 1:</label>
+                            <input type="number" class="form-control" id="combfluids-vol1" step="1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="combfluids-conc1">Concentration 1 (%):</label>
+                            <input type="number" class="form-control" id="combfluids-conc1" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="combfluids-vol2">Volume 2:</label>
+                            <input type="number" class="form-control" id="combfluids-vol2" step="1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="combfluids-conc2">Concentration 2 (%):</label>
+                            <input type="number" class="form-control" id="combfluids-conc2" step="0.1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateCombFluids()">Calculate</button>
+                        <div id="combfluids-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#combfluidsInfoModal">Info</button>
+                        <div class="modal fade" id="combfluidsInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Combining Fluids Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Calculates the final concentration when mixing two fluids.</p>
+                                        <p>Formula: [(Vol1 × Conc1) + (Vol2 × Conc2)] / (Vol1 + Vol2)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Constant Rate Infusion Calc -->
+                    <div id="cri" class="calculator" style="display: none;">
+                        <h2>Constant Rate Infusion Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="cri-unit" id="cri-metric" value="metric" checked>
+                                <label class="form-check-label" for="cri-metric">Metric (kg, mL)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="cri-unit" id="cri-imperial" value="imperial">
+                                <label class="form-check-label" for="cri-imperial">Imperial (lb, oz)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cri-weight">Weight:</label>
+                            <input type="number" class="form-control" id="cri-weight" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="cri-dose">Dose Rate (μg/kg/min):</label>
+                            <input type="number" class="form-control" id="cri-dose" step="0.01" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="cri-conc">Drug Concentration (mg/mL or mg/oz):</label>
+                            <input type="number" class="form-control" id="cri-conc" step="0.01" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateCRI()">Calculate</button>
+                        <div id="cri-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#criInfoModal">Info</button>
+                        <div class="modal fade" id="criInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Constant Rate Infusion Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Determines infusion rate for constant drug delivery.</p>
+                                        <p>Formula: [Weight (kg) × Dose (μg/kg/min)] / [Concentration (mg/mL) × 1000] × 60</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dosing Calc -->
+                    <div id="dosing" class="calculator" style="display: none;">
+                        <h2>Dosing Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dosing-unit" id="dosing-metric" value="metric" checked>
+                                <label class="form-check-label" for="dosing-metric">Metric (kg, mL)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="dosing-unit" id="dosing-imperial" value="imperial">
+                                <label class="form-check-label" for="dosing-imperial">Imperial (lb, oz)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dosing-weight">Weight:</label>
+                            <input type="number" class="form-control" id="dosing-weight" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="dosing-dose">Dose (mg/kg or mg/lb):</label>
+                            <input type="number" class="form-control" id="dosing-dose" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="dosing-conc">Concentration (mg/mL or mg/oz):</label>
+                            <input type="number" class="form-control" id="dosing-conc" step="0.1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateDosing()">Calculate</button>
+                        <div id="dosing-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#dosingInfoModal">Info</button>
+                        <div class="modal fade" id="dosingInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Dosing Calculator Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Calculates the volume of drug to administer.</p>
+                                        <p>Formula: [Weight (kg) × Dose (mg/kg)] / Concentration (mg/mL)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Drip Rates -->
+                    <div id="driprate" class="calculator" style="display: none;">
+                        <h2>Drip Rates Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="driprate-unit" id="driprate-metric" value="metric" checked>
+                                <label class="form-check-label" for="driprate-metric">Metric (mL)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="driprate-unit" id="driprate-imperial" value="imperial">
+                                <label class="form-check-label" for="driprate-imperial">Imperial (oz)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="driprate-volume">Volume:</label>
+                            <input type="number" class="form-control" id="driprate-volume" step="1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="driprate-time">Time (hours):</label>
+                            <input type="number" class="form-control" id="driprate-time" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="driprate-set">Drop Factor (drops/mL or drops/oz):</label>
+                            <input type="number" class="form-control" id="driprate-set" step="1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateDripRate()">Calculate</button>
+                        <div id="driprate-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#driprateInfoModal">Info</button>
+                        <div class="modal fade" id="driprateInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Drip Rates Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Calculates IV drip rate for fluid administration.</p>
+                                        <p>Formula: [Volume (mL) × Drop Factor (drops/mL)] / [Time (h) × 60]</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Echo Values -->
-<div id="echo" class="calculator">
-    <h2>Echo Values Calculator</h2>
-    <div class="form-group">
-        <label for="echo-lvid">Left Ventricular Internal Dimension (cm):</label>
-        <input type="number" class="form-control" id="echo-lvid" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="echo-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="echo-weight" step="0.1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateEcho()">Calculate</button>
-    <div id="echo-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#echoInfoModal">Info</button>
-    <div class="modal fade" id="echoInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Echo Values Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Normalizes echocardiographic measurements by weight.</p>
-                    <p>Formula: LVID / Weight^(1/3) (simplified index)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <div id="echo" class="calculator" style="display: none;">
+                        <h2>Echo Values Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="echo-unit" id="echo-metric" value="metric" checked>
+                                <label class="form-check-label" for="echo-metric">Metric (cm, kg)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="echo-unit" id="echo-imperial" value="imperial">
+                                <label class="form-check-label" for="echo-imperial">Imperial (in, lb)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="echo-lvid">Left Ventricular Internal Dimension:</label>
+                            <input type="number" class="form-control" id="echo-lvid" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="echo-weight">Weight:</label>
+                            <input type="number" class="form-control" id="echo-weight" step="0.1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateEcho()">Calculate</button>
+                        <div id="echo-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#echoInfoModal">Info</button>
+                        <div class="modal fade" id="echoInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Echo Values Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Normalizes echocardiographic measurements.</p>
+                                        <p>Formula: LVID / Weight^(1/3)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Energy Requirements -->
+                    <div id="energy" class="calculator" style="display: none;">
+                        <h2>Energy Requirements Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="energy-unit" id="energy-metric" value="metric" checked>
+                                <label class="form-check-label" for="energy-metric">Metric (kg)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="energy-unit" id="energy-imperial" value="imperial">
+                                <label class="form-check-label" for="energy-imperial">Imperial (lb)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="energy-weight">Weight:</label>
+                            <input type="number" class="form-control" id="energy-weight" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="energy-status">Status:</label>
+                            <select class="form-control" id="energy-status">
+                                <option value="resting">Resting (RER)</option>
+                                <option value="active">Active (1.5 × RER)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateEnergy()">Calculate</button>
+                        <div id="energy-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#energyInfoModal">Info</button>
+                        <div class="modal fade" id="energyInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Energy Requirements Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Estimates daily energy needs.</p>
+                                        <p>Formula: RER = 70 × (Weight (kg))^0.75; Active = 1.5 × RER</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Equine Fluids -->
+                    <div id="equinefluids" class="calculator" style="display: none;">
+                        <h2>Equine Fluids Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="equinefluids-unit" id="equinefluids-metric" value="metric" checked>
+                                <label class="form-check-label" for="equinefluids-metric">Metric (kg, mL)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="equinefluids-unit" id="equinefluids-imperial" value="imperial">
+                                <label class="form-check-label" for="equinefluids-imperial">Imperial (lb, oz)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="equinefluids-weight">Weight:</label>
+                            <input type="number" class="form-control" id="equinefluids-weight" step="1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="equinefluids-dehyd">Dehydration (%):</label>
+                            <input type="number" class="form-control" id="equinefluids-dehyd" step="1" min="0" max="15">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateEquineFluids()">Calculate</button>
+                        <div id="equinefluids-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#equinefluidsInfoModal">Info</button>
+                        <div class="modal fade" id="equinefluidsInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Equine Fluids Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Estimates fluid deficit for horses.</p>
+                                        <p>Formula: Weight (kg) × Dehydration (%) × 10</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fluid Plan -->
+                    <div id="fluidplan" class="calculator" style="display: none;">
+                        <h2>Fluid Plan Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="fluidplan-unit" id="fluidplan-metric" value="metric" checked>
+                                <label class="form-check-label" for="fluidplan-metric">Metric (kg, mL)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="fluidplan-unit" id="fluidplan-imperial" value="imperial">
+                                <label class="form-check-label" for="fluidplan-imperial">Imperial (lb, oz)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fluidplan-weight">Weight:</label>
+                            <input type="number" class="form-control" id="fluidplan-weight" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="fluidplan-dehyd">Dehydration (%):</label>
+                            <input type="number" class="form-control" id="fluidplan-dehyd" step="1" min="0" max="15">
+                        </div>
+                        <div class="form-group">
+                            <label for="fluidplan-hours">Time (hours):</label>
+                            <input type="number" class="form-control" id="fluidplan-hours" step="1" min="1">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateFluidPlan()">Calculate</button>
+                        <div id="fluidplan-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#fluidplanInfoModal">Info</button>
+                        <div class="modal fade" id="fluidplanInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Fluid Plan Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Calculates fluid rate including deficit and maintenance.</p>
+                                        <p>Formula: [Deficit (Weight × % × 10) + Maintenance (50 mL/kg/day)] / Hours</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fractional Excretion of Sodium -->
+                    <div id="fena" class="calculator" style="display: none;">
+                        <h2>Fractional Excretion of Sodium Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label for="fena-una">Urine Na⁺ (mEq/L):</label>
+                            <input type="number" class="form-control" id="fena-una" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="fena-pna">Plasma Na⁺ (mEq/L):</label>
+                            <input type="number" class="form-control" id="fena-pna" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="fena-ucreat">Urine Creatinine (mg/dL):</label>
+                            <input type="number" class="form-control" id="fena-ucreat" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="fena-pcreat">Plasma Creatinine (mg/dL):</label>
+                            <input type="number" class="form-control" id="fena-pcreat" step="0.1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateFeNa()">Calculate</button>
+                        <div id="fena-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#fenaInfoModal">Info</button>
+                        <div class="modal fade" id="fenaInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Fractional Excretion of Sodium Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Assesses kidney function.</p>
+                                        <p>Formula: (Urine Na⁺ / Plasma Na⁺) ÷ (Urine Creat / Plasma Creat) × 100</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Maintenance Fluids -->
+                    <div id="maintfluids" class="calculator" style="display: none;">
+                        <h2>Maintenance Fluids Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="maintfluids-unit" id="maintfluids-metric" value="metric" checked>
+                                <label class="form-check-label" for="maintfluids-metric">Metric (kg, mL)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="maintfluids-unit" id="maintfluids-imperial" value="imperial">
+                                <label class="form-check-label" for="maintfluids-imperial">Imperial (lb, oz)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="maintfluids-weight">Weight:</label>
+                            <input type="number" class="form-control" id="maintfluids-weight" step="0.1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateMaintFluids()">Calculate</button>
+                        <div id="maintfluids-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#maintfluidsInfoModal">Info</button>
+                        <div class="modal fade" id="maintfluidsInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Maintenance Fluids Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Estimates daily fluid needs.</p>
+                                        <p>Formula: 50 mL/kg/day</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Osmolality -->
+                    <div id="osmolality" class="calculator" style="display: none;">
+                        <h2>Osmolality Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label for="osmolality-na">Na⁺ (mEq/L):</label>
+                            <input type="number" class="form-control" id="osmolality-na" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="osmolality-glucose">Glucose (mg/dL):</label>
+                            <input type="number" class="form-control" id="osmolality-glucose" step="1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="osmolality-bun">BUN (mg/dL):</label>
+                            <input type="number" class="form-control" id="osmolality-bun" step="1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateOsmolality()">Calculate</button>
+                        <div id="osmolality-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#osmolalityInfoModal">Info</button>
+                        <div class="modal fade" id="osmolalityInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Osmolality Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Estimates plasma osmolality.</p>
+                                        <p>Formula: 2 × Na⁺ + (Glucose / 18) + (BUN / 2.8)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Percentage Solutions -->
+                    <div id="percsol" class="calculator" style="display: none;">
+                        <h2>Percentage Solutions Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="percsol-unit" id="percsol-metric" value="metric" checked>
+                                <label class="form-check-label" for="percsol-metric">Metric (g, mL)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="percsol-unit" id="percsol-imperial" value="imperial">
+                                <label class="form-check-label" for="percsol-imperial">Imperial (oz, fl oz)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="percsol-solute">Solute:</label>
+                            <input type="number" class="form-control" id="percsol-solute" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="percsol-volume">Volume:</label>
+                            <input type="number" class="form-control" id="percsol-volume" step="1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculatePercSol()">Calculate</button>
+                        <div id="percsol-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#percsolInfoModal">Info</button>
+                        <div class="modal fade" id="percsolInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Percentage Solutions Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Calculates the concentration of a solution.</p>
+                                        <p>Formula: (Solute (g) / Volume (mL)) × 100</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Temperature Conversion -->
+                    <div id="tempconv" class="calculator" style="display: none;">
+                        <h2>Temperature Conversion Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label for="tempconv-value">Temperature:</label>
+                            <input type="number" class="form-control" id="tempconv-value" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label for="tempconv-unit">Unit:</label>
+                            <select class="form-control" id="tempconv-unit">
+                                <option value="c-to-f">Celsius to Fahrenheit</option>
+                                <option value="f-to-c">Fahrenheit to Celsius</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateTempConv()">Calculate</button>
+                        <div id="tempconv-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#tempconvInfoModal">Info</button>
+                        <div class="modal fade" id="tempconvInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Temperature Conversion Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Converts between Celsius and Fahrenheit.</p>
+                                        <p>Formulas: C to F = (C × 9/5) + 32; F to C = (F - 32) × 5/9</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Transfusion Calc -->
+                    <div id="transfusion" class="calculator" style="display: none;">
+                        <h2>Transfusion Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="transfusion-unit" id="transfusion-metric" value="metric" checked>
+                                <label class="form-check-label" for="transfusion-metric">Metric (kg, mL)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="transfusion-unit" id="transfusion-imperial" value="imperial">
+                                <label class="form-check-label" for="transfusion-imperial">Imperial (lb, oz)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="transfusion-weight">Weight:</label>
+                            <input type="number" class="form-control" id="transfusion-weight" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="transfusion-hctcurrent">Current HCT (%):</label>
+                            <input type="number" class="form-control" id="transfusion-hctcurrent" step="0.1" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="transfusion-hcttarget">Target HCT (%):</label>
+                            <input type="number" class="form-control" id="transfusion-hcttarget" step="0.1" min="0" max="100">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateTransfusion()">Calculate</button>
+                        <div id="transfusion-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#transfusionInfoModal">Info</button>
+                        <div class="modal fade" id="transfusionInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Transfusion Calculator Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Estimates blood volume needed for transfusion.</p>
+                                        <p>Formula: Weight (kg) × 70 × (Target HCT - Current HCT) / Donor HCT (assume 40%)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Weight Conversion -->
+                    <div id="weightconv" class="calculator" style="display: none;">
+                        <h2>Weight Conversion Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label for="weightconv-value">Weight:</label>
+                            <input type="number" class="form-control" id="weightconv-value" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="weightconv-unit">Unit:</label>
+                            <select class="form-control" id="weightconv-unit">
+                                <option value="kg-to-lb">kg to lb</option>
+                                <option value="lb-to-kg">lb to kg</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateWeightConv()">Calculate</button>
+                        <div id="weightconv-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#weightconvInfoModal">Info</button>
+                        <div class="modal fade" id="weightconvInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Weight Conversion Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Converts between kilograms and pounds.</p>
+                                        <p>Formulas: kg to lb = kg × 2.20462; lb to kg = lb / 2.20462</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- IV Fluid Rate Calculator -->
+                    <div id="ivfluidrate" class="calculator" style="display: none;">
+                        <h2>IV Fluid Rate Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label>Units:</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ivfluidrate-unit" id="ivfluidrate-metric" value="metric" checked>
+                                <label class="form-check-label" for="ivfluidrate-metric">Metric (kg, mL)</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ivfluidrate-unit" id="ivfluidrate-imperial" value="imperial">
+                                <label class="form-check-label" for="ivfluidrate-imperial">Imperial (lb, oz)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ivfluidrate-weight">Weight:</label>
+                            <input type="number" class="form-control" id="ivfluidrate-weight" step="0.1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="ivfluidrate-rate">Rate (mL/kg/h or oz/lb/h):</label>
+                            <input type="number" class="form-control" id="ivfluidrate-rate" step="0.1" min="0">
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateIVFluidRate()">Calculate</button>
+                        <div id="ivfluidrate-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#ivfluidrateInfoModal">Info</button>
+                        <div class="modal fade" id="ivfluidrateInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">IV Fluid Rate Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Calculates IV fluid administration rate.</p>
+                                        <p>Formula: Weight (kg) × Rate (mL/kg/h)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gestation Period Calculator -->
+                    <div id="gestation" class="calculator" style="display: none;">
+                        <h2>Gestation Period Calculator</h2>
+                        <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
+                        <div class="form-group">
+                            <label for="gestation-date">Breeding Date (YYYY-MM-DD):</label>
+                            <input type="date" class="form-control" id="gestation-date">
+                        </div>
+                        <div class="form-group">
+                            <label for="gestation-species">Species:</label>
+                            <select class="form-control" id="gestation-species">
+                                <option value="dog">Dog (63 days)</option>
+                                <option value="cat">Cat (65 days)</option>
+                                <option value="horse">Horse (340 days)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateGestation()">Calculate</button>
+                        <div id="gestation-result" class="mt-3"></div>
+                        <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#gestationInfoModal">Info</button>
+                        <div class="modal fade" id="gestationInfoModal" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Gestation Period Info</h5>
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Estimates due date based on breeding date and species.</p>
+                                        <p>Average gestation: Dog (63 days), Cat (65 days), Horse (340 days)</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Energy Requirements -->
-<div id="energy" class="calculator">
-    <h2>Energy Requirements Calculator</h2>
-    <div class="form-group">
-        <label for="energy-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="energy-weight" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="energy-status">Status:</label>
-        <select class="form-control" id="energy-status">
-            <option value="resting">Resting (RER)</option>
-            <option value="active">Active (1.5 × RER)</option>
-        </select>
-    </div>
-    <button class="btn btn-primary" onclick="calculateEnergy()">Calculate</button>
-    <div id="energy-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#energyInfoModal">Info</button>
-    <div class="modal fade" id="energyInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Energy Requirements Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Estimates daily energy needs.</p>
-                    <p>Formula: RER = 70 × (Weight (kg))^0.75; Active = 1.5 × RER</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Equine Fluids -->
-<div id="equinefluids" class="calculator">
-    <h2>Equine Fluids Calculator</h2>
-    <div class="form-group">
-        <label for="equinefluids-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="equinefluids-weight" step="1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="equinefluids-dehyd">Dehydration (%):</label>
-        <input type="number" class="form-control" id="equinefluids-dehyd" step="1" min="0" max="15">
-    </div>
-    <button class="btn btn-primary" onclick="calculateEquineFluids()">Calculate</button>
-    <div id="equinefluids-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#equinefluidsInfoModal">Info</button>
-    <div class="modal fade" id="equinefluidsInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Equine Fluids Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Estimates fluid deficit for horses.</p>
-                    <p>Formula: Weight (kg) × Dehydration (%) × 10 = Fluid Deficit (mL)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Fluid Plan -->
-<div id="fluidplan" class="calculator">
-    <h2>Fluid Plan Calculator</h2>
-    <div class="form-group">
-        <label for="fluidplan-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="fluidplan-weight" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="fluidplan-dehyd">Dehydration (%):</label>
-        <input type="number" class="form-control" id="fluidplan-dehyd" step="1" min="0" max="15">
-    </div>
-    <div class="form-group">
-        <label for="fluidplan-hours">Time (hours):</label>
-        <input type="number" class="form-control" id="fluidplan-hours" step="1" min="1">
-    </div>
-    <button class="btn btn-primary" onclick="calculateFluidPlan()">Calculate</button>
-    <div id="fluidplan-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#fluidplanInfoModal">Info</button>
-    <div class="modal fade" id="fluidplanInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Fluid Plan Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Calculates fluid rate including deficit and maintenance.</p>
-                    <p>Formula: [Deficit (Weight × % × 10) + Maintenance (50 mL/kg/day)] / Hours</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Fractional Excretion of Sodium -->
-<div id="fena" class="calculator">
-    <h2>Fractional Excretion of Sodium Calculator</h2>
-    <div class="form-group">
-        <label for="fena-una">Urine Na⁺ (mEq/L):</label>
-        <input type="number" class="form-control" id="fena-una" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="fena-pna">Plasma Na⁺ (mEq/L):</label>
-        <input type="number" class="form-control" id="fena-pna" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="fena-ucreat">Urine Creatinine (mg/dL):</label>
-        <input type="number" class="form-control" id="fena-ucreat" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="fena-pcreat">Plasma Creatinine (mg/dL):</label>
-        <input type="number" class="form-control" id="fena-pcreat" step="0.1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateFeNa()">Calculate</button>
-    <div id="fena-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#fenaInfoModal">Info</button>
-    <div class="modal fade" id="fenaInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Fractional Excretion of Sodium Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Assesses kidney function (e.g., prerenal vs. intrinsic injury).</p>
-                    <p>Formula: (Urine Na⁺ / Plasma Na⁺) ÷ (Urine Creat / Plasma Creat) × 100</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Maintenance Fluids -->
-<div id="maintfluids" class="calculator">
-    <h2>Maintenance Fluids Calculator</h2>
-    <div class="form-group">
-        <label for="maintfluids-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="maintfluids-weight" step="0.1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateMaintFluids()">Calculate</button>
-    <div id="maintfluids-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#maintfluidsInfoModal">Info</button>
-    <div class="modal fade" id="maintfluidsInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Maintenance Fluids Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Estimates daily fluid needs for maintenance.</p>
-                    <p>Formula: 50 mL/kg/day (simplified average rate)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Osmolality -->
-<div id="osmolality" class="calculator">
-    <h2>Osmolality Calculator</h2>
-    <div class="form-group">
-        <label for="osmolality-na">Na⁺ (mEq/L):</label>
-        <input type="number" class="form-control" id="osmolality-na" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="osmolality-glucose">Glucose (mg/dL):</label>
-        <input type="number" class="form-control" id="osmolality-glucose" step="1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="osmolality-bun">BUN (mg/dL):</label>
-        <input type="number" class="form-control" id="osmolality-bun" step="1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateOsmolality()">Calculate</button>
-    <div id="osmolality-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#osmolalityInfoModal">Info</button>
-    <div class="modal fade" id="osmolalityInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Osmolality Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Estimates plasma osmolality.</p>
-                    <p>Formula: 2 × Na⁺ + (Glucose / 18) + (BUN / 2.8)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Percentage Solutions -->
-<div id="percsol" class="calculator">
-    <h2>Percentage Solutions Calculator</h2>
-    <div class="form-group">
-        <label for="percsol-solute">Solute (g):</label>
-        <input type="number" class="form-control" id="percsol-solute" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="percsol-volume">Volume (mL):</label>
-        <input type="number" class="form-control" id="percsol-volume" step="1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculatePercSol()">Calculate</button>
-    <div id="percsol-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#percsolInfoModal">Info</button>
-    <div class="modal fade" id="percsolInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Percentage Solutions Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Calculates the concentration of a solution.</p>
-                    <p>Formula: (Solute (g) / Volume (mL)) × 100 = % w/v</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Temperature Conversion -->
-<div id="tempconv" class="calculator">
-    <h2>Temperature Conversion Calculator</h2>
-    <div class="form-group">
-        <label for="tempconv-value">Temperature:</label>
-        <input type="number" class="form-control" id="tempconv-value" step="0.1">
-    </div>
-    <div class="form-group">
-        <label for="tempconv-unit">Unit:</label>
-        <select class="form-control" id="tempconv-unit">
-            <option value="c-to-f">Celsius to Fahrenheit</option>
-            <option value="f-to-c">Fahrenheit to Celsius</option>
-        </select>
-    </div>
-    <button class="btn btn-primary" onclick="calculateTempConv()">Calculate</button>
-    <div id="tempconv-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#tempconvInfoModal">Info</button>
-    <div class="modal fade" id="tempconvInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Temperature Conversion Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Converts between Celsius and Fahrenheit.</p>
-                    <p>Formulas: C to F = (C × 9/5) + 32; F to C = (F - 32) × 5/9</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Transfusion Calc -->
-<div id="transfusion" class="calculator">
-    <h2>Transfusion Calculator</h2>
-    <div class="form-group">
-        <label for="transfusion-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="transfusion-weight" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="transfusion-hctcurrent">Current HCT (%):</label>
-        <input type="number" class="form-control" id="transfusion-hctcurrent" step="0.1" min="0" max="100">
-    </div>
-    <div class="form-group">
-        <label for="transfusion-hcttarget">Target HCT (%):</label>
-        <input type="number" class="form-control" id="transfusion-hcttarget" step="0.1" min="0" max="100">
-    </div>
-    <button class="btn btn-primary" onclick="calculateTransfusion()">Calculate</button>
-    <div id="transfusion-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#transfusionInfoModal">Info</button>
-    <div class="modal fade" id="transfusionInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Transfusion Calculator Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Estimates blood volume needed for transfusion.</p>
-                    <p>Formula: Weight (kg) × 70 × (Target HCT - Current HCT) / Donor HCT (assume 40%)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Weight Conversion -->
-<div id="weightconv" class="calculator">
-    <h2>Weight Conversion Calculator</h2>
-    <div class="form-group">
-        <label for="weightconv-value">Weight:</label>
-        <input type="number" class="form-control" id="weightconv-value" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="weightconv-unit">Unit:</label>
-        <select class="form-control" id="weightconv-unit">
-            <option value="kg-to-lb">kg to lb</option>
-            <option value="lb-to-kg">lb to kg</option>
-        </select>
-    </div>
-    <button class="btn btn-primary" onclick="calculateWeightConv()">Calculate</button>
-    <div id="weightconv-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#weightconvInfoModal">Info</button>
-    <div class="modal fade" id="weightconvInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Weight Conversion Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Converts between kilograms and pounds.</p>
-                    <p>Formulas: kg to lb = kg × 2.20462; lb to kg = lb / 2.20462</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- IV Fluid Rate Calculator -->
-<div id="ivfluidrate" class="calculator">
-    <h2>IV Fluid Rate Calculator</h2>
-    <div class="form-group">
-        <label for="ivfluidrate-weight">Weight (kg):</label>
-        <input type="number" class="form-control" id="ivfluidrate-weight" step="0.1" min="0">
-    </div>
-    <div class="form-group">
-        <label for="ivfluidrate-rate">Rate (mL/kg/h):</label>
-        <input type="number" class="form-control" id="ivfluidrate-rate" step="0.1" min="0">
-    </div>
-    <button class="btn btn-primary" onclick="calculateIVFluidRate()">Calculate</button>
-    <div id="ivfluidrate-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#ivfluidrateInfoModal">Info</button>
-    <div class="modal fade" id="ivfluidrateInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">IV Fluid Rate Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Calculates IV fluid administration rate.</p>
-                    <p>Formula: Weight (kg) × Rate (mL/kg/h) = mL/h</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Gestation Period Calculator -->
-<div id="gestation" class="calculator">
-    <h2>Gestation Period Calculator</h2>
-    <div class="form-group">
-        <label for="gestation-date">Breeding Date (YYYY-MM-DD):</label>
-        <input type="date" class="form-control" id="gestation-date">
-    </div>
-    <div class="form-group">
-        <label for="gestation-species">Species:</label>
-        <select class="form-control" id="gestation-species">
-            <option value="dog">Dog (63 days)</option>
-            <option value="cat">Cat (65 days)</option>
-            <option value="horse">Horse (340 days)</option>
-        </select>
-    </div>
-    <button class="btn btn-primary" onclick="calculateGestation()">Calculate</button>
-    <div id="gestation-result" class="mt-3"></div>
-    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#gestationInfoModal">Info</button>
-    <div class="modal fade" id="gestationInfoModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Gestation Period Info</h5>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body">
-                    <p>Estimates due date based on breeding date and species.</p>
-                    <p>Average gestation: Dog (63 days), Cat (65 days), Horse (340 days)</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                    <!-- Placeholder for other calculators -->
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="js/calculators.js"></script>
-    <script src="js/main.js"></script>
-    <!-- Disclaimer Modal -->
-    <div class="modal fade" id="disclaimerModal" tabindex="-1" role="dialog" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="disclaimerModalLabel">Welcome to Vet Tech Calculators</h5>
+                    <h5 class="modal-title" id="loginModalLabel">Welcome to Vet Tech Calculators</h5>
                 </div>
                 <div class="modal-body">
-                    <p><strong>Disclaimer:</strong> This application is for educational purposes only and should not be used as a substitute for professional veterinary advice, diagnosis, or treatment. Always consult a licensed veterinarian for medical decisions.</p>
-                    <p>Please provide your email address to proceed (required only on your first visit):</p>
-                    <div class="form-group">
-                        <label for="userEmail">Email Address:</label>
-                        <input type="email" class="form-control" id="userEmail" placeholder="Enter your email">
+                    <p><strong>Disclaimer:</strong> This app is for educational purposes only. Consult a veterinarian for medical decisions.</p>
+                    <div id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email:</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password:</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Enter password">
+                        </div>
+                        <button class="btn bg-primary text-white" id="loginBtn">Login</button>
+                        <button class="btn bg-primary text-white ml-2" id="createAccountBtn">Create Account</button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="submitEmail">Accept & Continue</button>
+                    <div id="authMessage" class="mt-3"></div>
                 </div>
             </div>
         </div>
@@ -906,6 +1070,7 @@
 
     <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
     <!-- Bootstrap and jQuery Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
