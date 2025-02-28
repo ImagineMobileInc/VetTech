@@ -882,5 +882,38 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/calculators.js"></script>
     <script src="js/main.js"></script>
+    <!-- Disclaimer Modal -->
+    <div class="modal fade" id="disclaimerModal" tabindex="-1" role="dialog" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="disclaimerModalLabel">Welcome to Vet Tech Calculators</h5>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Disclaimer:</strong> This application is for educational purposes only and should not be used as a substitute for professional veterinary advice, diagnosis, or treatment. Always consult a licensed veterinarian for medical decisions.</p>
+                    <p>Please provide your email address to proceed (required only on your first visit):</p>
+                    <div class="form-group">
+                        <label for="userEmail">Email Address:</label>
+                        <input type="email" class="form-control" id="userEmail" placeholder="Enter your email">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="submitEmail">Accept & Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+    <!-- Bootstrap and jQuery Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- App Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/calculators.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
