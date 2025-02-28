@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #f8f9fa;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+.calculator {
+    display: none;
+    padding: 20px;
+}
+
+.calculator.active {
+    display: block;
+}
+
+#content {
+    min-height: 400px;
+}
