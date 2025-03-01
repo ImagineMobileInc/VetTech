@@ -8,40 +8,39 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-teal">
         <a class="navbar-brand" href="#">Vet Tech Calculators</a>
     </nav>
     <div class="container-fluid mt-3">
         <div class="row">
             <div class="col-md-12">
-                <div id="calc-list" class="list-group" style="display: none;">
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('aagradient')">A-a Gradient</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('anesthesia')">Anesthesia Drug Calc</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('aniongap')">Anion Gap</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('bloodgas')">Blood Gas Analysis</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('bicarb')">Bicarbonate Dosing</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('bsa')">Body Surface Area</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('combfluids')">Combining Fluids</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('cri')">Constant Rate Infusion Calc</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('dosing')">Dosing Calc</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('driprate')">Drip Rates</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('echo')">Echo Values</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('energy')">Energy Requirements</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('equinefluids')">Equine Fluids</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('fluidplan')">Fluid Plan</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('fena')">Fractional Excretion of Sodium</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('maintfluids')">Maintenance Fluids</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('osmolality')">Osmolality</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('percsol')">Percentage Solutions</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('tempconv')">Temperature Conversion</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('transfusion')">Transfusion Calc</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('weightconv')">Weight Conversion</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('ivfluidrate')">IV Fluid Rate Calculator</button>
-                    <button class="list-group-item list-group-item-action" onclick="selectCalculator('gestation')">Gestation Period Calculator</button>
+                <div id="calc-list" class="list-group calculator-list" style="display: none;">
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('aagradient')">A-a Gradient</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('anesthesia')">Anesthesia Drug Calc</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('aniongap')">Anion Gap</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('bloodgas')">Blood Gas Analysis</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('bicarb')">Bicarbonate Dosing</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('bsa')">Body Surface Area</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('combfluids')">Combining Fluids</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('cri')">Constant Rate Infusion Calc</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('dosing')">Dosing Calc</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('driprate')">Drip Rates</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('echo')">Echo Values</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('energy')">Energy Requirements</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('equinefluids')">Equine Fluids</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('fluidplan')">Fluid Plan</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('fena')">Fractional Excretion of Sodium</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('maintfluids')">Maintenance Fluids</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('osmolality')">Osmolality</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('percsol')">Percentage Solutions</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('tempconv')">Temperature Conversion</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('transfusion')">Transfusion Calc</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('weightconv')">Weight Conversion</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('ivfluidrate')">IV Fluid Rate Calculator</button>
+                    <button class="list-group-item list-group-item-action calc-btn" onclick="selectCalculator('gestation')">Gestation Period Calculator</button>
                 </div>
                 <div id="content">
-                    <div id="loading-message">Have ideas for a new calculator or tool? Email us at support@imaginemobile.biz</div>
-                     <!-- A-a Gradient -->
+                    <div id="loading-message">Loading Vet Tech Calculators... If this persists, check the console for errors.</div>
                     <div id="aagradient" class="calculator" style="display: none;">
                         <h2>A-a Gradient Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -82,7 +81,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Anesthesia Drug Calc -->
                     <div id="anesthesia" class="calculator" style="display: none;">
                         <h2>Anesthesia Drug Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -126,7 +124,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Anion Gap -->
                     <div id="aniongap" class="calculator" style="display: none;">
                         <h2>Anion Gap Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -163,7 +160,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Blood Gas Analysis -->
                     <div id="bloodgas" class="calculator" style="display: none;">
                         <h2>Blood Gas Analysis</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -200,7 +196,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Bicarbonate Dosing -->
                     <div id="bicarb" class="calculator" style="display: none;">
                         <h2>Bicarbonate Dosing Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -248,7 +243,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Body Surface Area -->
                     <div id="bsa" class="calculator" style="display: none;">
                         <h2>Body Surface Area Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -295,7 +289,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Combining Fluids -->
                     <div id="combfluids" class="calculator" style="display: none;">
                         <h2>Combining Fluids Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -347,7 +340,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Constant Rate Infusion Calc -->
                     <div id="cri" class="calculator" style="display: none;">
                         <h2>Constant Rate Infusion Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -395,7 +387,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Dosing Calc -->
                     <div id="dosing" class="calculator" style="display: none;">
                         <h2>Dosing Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -443,7 +434,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Drip Rates -->
                     <div id="driprate" class="calculator" style="display: none;">
                         <h2>Drip Rates Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -491,7 +481,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Echo Values -->
                     <div id="echo" class="calculator" style="display: none;">
                         <h2>Echo Values Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -535,7 +524,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Energy Requirements -->
                     <div id="energy" class="calculator" style="display: none;">
                         <h2>Energy Requirements Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -582,7 +570,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Equine Fluids -->
                     <div id="equinefluids" class="calculator" style="display: none;">
                         <h2>Equine Fluids Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -626,7 +613,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Fluid Plan -->
                     <div id="fluidplan" class="calculator" style="display: none;">
                         <h2>Fluid Plan Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -674,7 +660,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Fractional Excretion of Sodium -->
                     <div id="fena" class="calculator" style="display: none;">
                         <h2>Fractional Excretion of Sodium Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -715,7 +700,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Maintenance Fluids -->
                     <div id="maintfluids" class="calculator" style="display: none;">
                         <h2>Maintenance Fluids Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -755,7 +739,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Osmolality -->
                     <div id="osmolality" class="calculator" style="display: none;">
                         <h2>Osmolality Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -792,7 +775,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Percentage Solutions -->
                     <div id="percsol" class="calculator" style="display: none;">
                         <h2>Percentage Solutions Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -836,7 +818,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Temperature Conversion -->
                     <div id="tempconv" class="calculator" style="display: none;">
                         <h2>Temperature Conversion Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -872,7 +853,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Transfusion Calc -->
                     <div id="transfusion" class="calculator" style="display: none;">
                         <h2>Transfusion Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -920,7 +900,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Weight Conversion -->
                     <div id="weightconv" class="calculator" style="display: none;">
                         <h2>Weight Conversion Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -956,7 +935,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- IV Fluid Rate Calculator -->
                     <div id="ivfluidrate" class="calculator" style="display: none;">
                         <h2>IV Fluid Rate Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -1000,7 +978,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Gestation Period Calculator -->
                     <div id="gestation" class="calculator" style="display: none;">
                         <h2>Gestation Period Calculator</h2>
                         <button class="btn btn-secondary mb-3" onclick="backToList()">Back to List</button>
@@ -1042,40 +1019,43 @@
         </div>
     </div>
 
-   <!-- Login Modal -->
+    <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
+            <div class="modal-content rounded-modal">
+                <div class="modal-header bg-teal text-white">
                     <h5 class="modal-title" id="loginModalLabel">Welcome to Vet Tech Calculators</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <p><strong>Disclaimer:</strong> This app is for reference purposes only. Consult a veterinarian for medical decisions.</p>
+                    <p><strong>Disclaimer:</strong> This app is for educational purposes only. Consult a veterinarian for medical decisions.</p>
                     <div id="loginForm">
                         <div class="form-group">
-                            <label for="loginEmail">Email:</label>
+                            <label for="loginEmail" class="text-white">Email:</label>
                             <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
                         </div>
                         <div class="form-group">
-                            <label for="loginPassword">Password:</label>
+                            <label for="loginPassword" class="text-white">Password:</label>
                             <input type="password" class="form-control" id="loginPassword" placeholder="Enter password">
                         </div>
                         <button class="btn bg-primary text-white" id="loginBtn">Login</button>
                         <button class="btn bg-primary text-white ml-2" id="createAccountBtn">Create Account</button>
                     </div>
-                    <div id="authMessage" class="mt-3"></div>
+                    <div id="authMessage" class="mt-3 text-white"></div>
                 </div>
             </div>
         </div>
     </div>
 
-       <!-- Firebase Compat SDKs -->
+    <!-- Firebase Compat SDKs -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
     <!-- Bootstrap and jQuery Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script> <!-- Removed integrity for now -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <!-- App Scripts -->
     <script src="js/firebase-config.js"></script>
