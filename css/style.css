@@ -1,28 +1,103 @@
+/* css/style.css */
+
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f5; /* Light gray background */
+    color: #333;
 }
 
-.navbar {
-    background-color: #f8f9fa;
+/* Navbar */
+.bg-teal {
+    background-color: #1a3c34 !important; /* Dark teal */
 }
 
-.list-group-item {
-    cursor: pointer;
+/* Calculator List Buttons */
+.calculator-list .calc-btn {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.list-group-item:hover {
-    background-color: #f1f1f1;
+.calculator-list .calc-btn:hover {
+    background-color: #333; /* Darker gray on hover */
+    transform: scale(1.02);
 }
 
+/* Calculator Content */
 .calculator {
-    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.calculator h2 {
+    color: #1a3c34; /* Dark teal */
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Blue */
+    border: none;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border: none;
+}
+
+/* Login Modal */
+.rounded-modal {
+    background-color: #1a3c34; /* Dark teal */
+    color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.rounded-modal .modal-header {
+    border-bottom: none;
+}
+
+.rounded-modal .modal-body {
     padding: 20px;
 }
 
-.calculator.active {
-    display: block;
+.rounded-modal .form-control {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ced4da;
 }
 
-#content {
-    min-height: 400px;
+.rounded-modal .btn {
+    padding: 10px 20px;
+}
+
+/* Loading Message */
+#loading-message {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .calculator-list .calc-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
 }
