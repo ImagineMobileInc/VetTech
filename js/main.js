@@ -1,41 +1,62 @@
 // js/main.js
 
-// Initialize Firebase from firebase-config.js
-initializeFirebase();
-const auth = firebase.auth();
-const db = firebase.firestore();
-
-// Function to show a selected calculator and hide the list
 function selectCalculator(calcId) {
-    document.getElementById('calc-list').style.display = 'none';
-    document.querySelectorAll('.calculator').forEach(el => el.style.display = 'none');
-    document.getElementById(calcId).style.display = 'block';
+    try {
+        document.getElementById('calc-list').style.display = 'none';
+        document.querySelectorAll('.calculator').forEach(el => el.style.display = 'none');
+        document.getElementById(calcId).style.display = 'block';
+        console.log(`Selected calculator: ${calcId}`);
+    } catch (error) {
+        console.error('Error in selectCalculator:', error);
+    }
 }
 
-// Function to return to the calculator list
 function backToList() {
-    document.getElementById('calc-list').style.display = 'block';
-    document.querySelectorAll('.calculator').forEach(el => el.style.display = 'none');
+    try {
+        document.getElementById('calc-list').style.display = 'block';
+        document.querySelectorAll('.calculator').forEach(el => el.style.display = 'none');
+        console.log('Returned to calculator list');
+    } catch (error) {
+        console.error('Error in backToList:', error);
+    }
 }
 
-// Authentication and Initialization Logic
-window.onload = function() {
-    // Check authentication state
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded');
+
+    let auth, db;
+    try {
+        initializeFirebase();
+        auth = firebase.auth();
+        db = firebase.firestore();
+        console.log('Firebase initialized successfully');
+    } catch (error) {
+        console.error('Firebase initialization failed:', error);
+        document.getElementById('calc-list').style.display = 'block';
+        document.getElementById('loading-message').style.display = 'none';
+        return;
+    }
+
     auth.onAuthStateChanged(user => {
-        if (user) {
-            // User is signed in, show the calculator list
+        try {
+            if (user) {
+                console.log('User logged in:', user.email);
+                document.getElementById('calc-list').style.display = 'block';
+                document.getElementById('loading-message').style.display = 'none';
+                $('#loginModal').modal('hide');
+            } else {
+                console.log('No user logged in');
+                document.getElementById('calc-list').style.display = 'none';
+                document.getElementById('loading-message').style.display = 'none';
+                $('#loginModal').modal({ backdrop: 'static', keyboard: false });
+            }
+        } catch (error) {
+            console.error('Error in auth state change:', error);
             document.getElementById('calc-list').style.display = 'block';
-            $('#loginModal').modal('hide');
-            console.log('User logged in:', user.email);
-        } else {
-            // No user signed in, show login modal
-            document.getElementById('calc-list').style.display = 'none';
-            $('#loginModal').modal({ backdrop: 'static', keyboard: false });
-            console.log('No user logged in');
+            document.getElementById('loading-message').innerHTML = 'An error occurred. Please check the console.';
         }
     });
 
-    // Login button event listener
     document.getElementById('loginBtn').addEventListener('click', () => {
         const email = document.getElementById('loginEmail').value.trim();
         const password = document.getElementById('loginPassword').value.trim();
@@ -48,16 +69,17 @@ window.onload = function() {
         auth.signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 document.getElementById('authMessage').innerHTML = 'Login successful!';
+                console.log('Login successful for:', userCredential.user.email);
                 setTimeout(() => {
                     $('#loginModal').modal('hide');
-                }, 1000); // Brief delay to show success message
+                }, 1000);
             })
             .catch((error) => {
                 document.getElementById('authMessage').innerHTML = `Error: ${error.message}`;
+                console.error('Login error:', error);
             });
     });
 
-    // Create account button event listener
     document.getElementById('createAccountBtn').addEventListener('click', () => {
         const email = document.getElementById('loginEmail').value.trim();
         const password = document.getElementById('loginPassword').value.trim();
@@ -70,23 +92,25 @@ window.onload = function() {
         auth.createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 document.getElementById('authMessage').innerHTML = 'Account created and logged in!';
-                // Store user email in Firestore
+                console.log('Account created for:', userCredential.user.email);
                 db.collection('users').doc(userCredential.user.uid).set({
                     email: email,
                     createdAt: firebase.firestore.FieldValue.serverTimestamp()
                 })
                 .then(() => {
-                    console.log('User data stored in Firestore');
+                    console.log('User data stored in Firestore successfully');
                     setTimeout(() => {
                         $('#loginModal').modal('hide');
                     }, 1000);
                 })
                 .catch((error) => {
-                    console.error('Error storing user data:', error);
+                    console.error('Error storing user data in Firestore:', error);
+                    document.getElementById('authMessage').innerHTML += `<br>Firestore error: ${error.message}`;
                 });
             })
             .catch((error) => {
                 document.getElementById('authMessage').innerHTML = `Error: ${error.message}`;
+                console.error('Create account error:', error);
             });
     });
-};
+});
