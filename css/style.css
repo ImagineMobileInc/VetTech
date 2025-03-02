@@ -190,3 +190,9 @@ body {
         margin: 0; /* No extra margin within grid */
     }
 }
+/* Centered Advertisement */
+.centered-ad {
+    display: flex;
+    justify-content: center; /* Centers the entire ad block horizontally */
+    margin-top: 15px; /* Adds spacing above the ad */
+}
