@@ -14,34 +14,107 @@
     <a href='https://afflat3e3.com/lnk.asp?o=21986&c=157312&a=373644&k=A429529A6DBB8AB4B7A00BFB137E512D&l=22972&s1=vettech' style="display: flex; align-items: center; text-decoration: none; color: black;">
         <span style="margin-right: 10px;">Try CBD dog treats and other products for your pets!</span>
         <img src='https://maxbounty.com/resources/getimage.asp?a=373644&m=11421&o=21986&i=157312.dat' width=100 height=100 border=0>
-      </a>
+    </a>
     <div class="container-fluid mt-3">
         <div class="row">
             <div class="col-md-12">
+                <div class="site-description">
+                    <h1>Vet Tech Calculators</h1>
+                    <p>Welcome to Vet Tech Calculators, your go-to resource for veterinary medicine tools. Designed for students, professionals, and pet owners, this site offers a suite of 23 calculators to assist with dosing, fluid therapy, diagnostics, and more. Explore our tools below to simplify complex calculations and enhance your veterinary practice.</p>
+                </div>
                 <div id="calc-list" class="calc-container" style="display: none;">
-                    <button class="calc-btn" onclick="selectCalculator('aagradient')">A-a Gradient</button>
-                    <button class="calc-btn" onclick="selectCalculator('anesthesia')">Anesthesia Drug Calc</button>
-                    <button class="calc-btn" onclick="selectCalculator('aniongap')">Anion Gap</button>
-                    <button class="calc-btn" onclick="selectCalculator('bloodgas')">Blood Gas Analysis</button>
-                    <button class="calc-btn" onclick="selectCalculator('bicarb')">Bicarbonate Dosing</button>
-                    <button class="calc-btn" onclick="selectCalculator('bsa')">Body Surface Area</button>
-                    <button class="calc-btn" onclick="selectCalculator('combfluids')">Combining Fluids</button>
-                    <button class="calc-btn" onclick="selectCalculator('cri')">Constant Rate Infusion Calc</button>
-                    <button class="calc-btn" onclick="selectCalculator('dosing')">Dosing Calc</button>
-                    <button class="calc-btn" onclick="selectCalculator('driprate')">Drip Rates</button>
-                    <button class="calc-btn" onclick="selectCalculator('echo')">Echo Values</button>
-                    <button class="calc-btn" onclick="selectCalculator('energy')">Energy Requirements</button>
-                    <button class="calc-btn" onclick="selectCalculator('equinefluids')">Equine Fluids</button>
-                    <button class="calc-btn" onclick="selectCalculator('fluidplan')">Fluid Plan</button>
-                    <button class="calc-btn" onclick="selectCalculator('fena')">Fractional Excretion of Sodium</button>
-                    <button class="calc-btn" onclick="selectCalculator('maintfluids')">Maintenance Fluids</button>
-                    <button class="calc-btn" onclick="selectCalculator('osmolality')">Osmolality</button>
-                    <button class="calc-btn" onclick="selectCalculator('percsol')">Percentage Solutions</button>
-                    <button class="calc-btn" onclick="selectCalculator('tempconv')">Temperature Conversion</button>
-                    <button class="calc-btn" onclick="selectCalculator('transfusion')">Transfusion Calc</button>
-                    <button class="calc-btn" onclick="selectCalculator('weightconv')">Weight Conversion</button>
-                    <button class="calc-btn" onclick="selectCalculator('ivfluidrate')">IV Fluid Rate Calculator</button>
-                    <button class="calc-btn" onclick="selectCalculator('gestation')">Gestation Period Calculator</button>
+                    <div class="calc-item">
+                        <p class="calc-summary">Assesses lung gas exchange efficiency using oxygen and CO₂ levels.</p>
+                        <button class="calc-btn" onclick="selectCalculator('aagradient')">A-a Gradient</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Calculates total anesthesia drug amount based on weight and dose.</p>
+                        <button class="calc-btn" onclick="selectCalculator('anesthesia')">Anesthesia Drug Calc</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Evaluates acid-base imbalances using sodium, chloride, and bicarbonate.</p>
+                        <button class="calc-btn" onclick="selectCalculator('aniongap')">Anion Gap</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Interprets acid-base status from pH, PaCO₂, and HCO₃⁻ values.</p>
+                        <button class="calc-btn" onclick="selectCalculator('bloodgas')">Blood Gas Analysis</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Determines bicarbonate dose to correct metabolic acidosis.</p>
+                        <button class="calc-btn" onclick="selectCalculator('bicarb')">Bicarbonate Dosing</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Estimates body surface area for drug dosing in dogs and cats.</p>
+                        <button class="calc-btn" onclick="selectCalculator('bsa')">Body Surface Area</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Computes final concentration when mixing two fluid solutions.</p>
+                        <button class="calc-btn" onclick="selectCalculator('combfluids')">Combining Fluids</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Calculates infusion rate for constant drug delivery.</p>
+                        <button class="calc-btn" onclick="selectCalculator('cri')">Constant Rate Infusion Calc</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Determines drug volume based on weight, dose, and concentration.</p>
+                        <button class="calc-btn" onclick="selectCalculator('dosing')">Dosing Calc</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Computes IV drip rate from volume, time, and drop factor.</p>
+                        <button class="calc-btn" onclick="selectCalculator('driprate')">Drip Rates</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Normalizes echocardiographic measurements by weight.</p>
+                        <button class="calc-btn" onclick="selectCalculator('echo')">Echo Values</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Estimates daily energy needs (RER) for resting or active animals.</p>
+                        <button class="calc-btn" onclick="selectCalculator('energy')">Energy Requirements</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Calculates fluid deficit for equine dehydration correction.</p>
+                        <button class="calc-btn" onclick="selectCalculator('equinefluids')">Equine Fluids</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Plans fluid therapy including deficit and maintenance rates.</p>
+                        <button class="calc-btn" onclick="selectCalculator('fluidplan')">Fluid Plan</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Assesses kidney function using sodium and creatinine levels.</p>
+                        <button class="calc-btn" onclick="selectCalculator('fena')">Fractional Excretion of Sodium</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Estimates daily maintenance fluid needs based on weight.</p>
+                        <button class="calc-btn" onclick="selectCalculator('maintfluids')">Maintenance Fluids</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Calculates plasma osmolality from sodium, glucose, and BUN.</p>
+                        <button class="calc-btn" onclick="selectCalculator('osmolality')">Osmolality</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Determines solution concentration from solute and volume.</p>
+                        <button class="calc-btn" onclick="selectCalculator('percsol')">Percentage Solutions</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Converts temperatures between Celsius and Fahrenheit.</p>
+                        <button class="calc-btn" onclick="selectCalculator('tempconv')">Temperature Conversion</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Estimates blood volume needed for transfusion based on HCT.</p>
+                        <button class="calc-btn" onclick="selectCalculator('transfusion')">Transfusion Calc</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Converts weight between kilograms and pounds.</p>
+                        <button class="calc-btn" onclick="selectCalculator('weightconv')">Weight Conversion</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Calculates IV fluid rate based on weight and hourly rate.</p>
+                        <button class="calc-btn" onclick="selectCalculator('ivfluidrate')">IV Fluid Rate Calculator</button>
+                    </div>
+                    <div class="calc-item">
+                        <p class="calc-summary">Estimates due date from breeding date for various species.</p>
+                        <button class="calc-btn" onclick="selectCalculator('gestation')">Gestation Period Calculator</button>
+                    </div>
                 </div>
                 <div id="content">
                     <div id="loading-message">Loading Vet Tech Calculators... If this persists, check the console for errors.</div>
