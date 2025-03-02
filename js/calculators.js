@@ -18,17 +18,27 @@ function calculateAAGradient() {
 
 function calculateAnesthesia() {
     const weight = parseFloat(document.getElementById('anesthesia-weight').value);
-    const dose = parseFloat(document.getElementById('anesthesia-dose').value);
     const unit = document.querySelector('input[name="anesthesia-unit"]:checked').value;
+    const drugSelect = document.getElementById('anesthesia-drug');
+    const selectedDrug = drugSelect.options[drugSelect.selectedIndex];
 
-    if (!weight || !dose) {
-        alert('Please enter all values.');
+    if (!weight) {
+        alert('Please enter weight.');
         return;
     }
 
+    // Get drug-specific dose and concentration
+    const dose = unit === 'metric' ? 
+        parseFloat(selectedDrug.getAttribute('data-dose-metric')) : 
+        parseFloat(selectedDrug.getAttribute('data-dose-imperial'));
+    const concentration = parseFloat(selectedDrug.getAttribute('data-concentration'));
+
+    // Calculate volume (mL)
     let weightInKg = unit === 'imperial' ? weight / 2.20462 : weight;
-    const totalDrug = weightInKg * dose;
-    document.getElementById('anesthesia-result').innerHTML = `Total Drug: ${totalDrug.toFixed(2)} mg`;
+    const totalDrug = weightInKg * dose; // Total drug in mg
+    const volume = totalDrug / concentration; // Volume in mL
+
+    document.getElementById('anesthesia-result').innerHTML = `Volume of ${selectedDrug.value.charAt(0).toUpperCase() + selectedDrug.value.slice(1)} to Draw Up: ${volume.toFixed(2)} mL`;
 }
 
 function calculateAnionGap() {

@@ -175,12 +175,19 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="anesthesia-weight">Weight:</label>
-                            <input type="number" class="form-control" id="anesthesia-weight" step="0.1" min="0">
+                            <label for="anesthesia-drug">Drug:</label>
+                            <select class="form-control" id="anesthesia-drug">
+                                <option value="propofol" data-dose-metric="4" data-dose-imperial="1.8" data-concentration="10">Propofol (10 mg/mL)</option>
+                                <option value="ketamine" data-dose-metric="5" data-dose-imperial="2.3" data-concentration="100">Ketamine (100 mg/mL)</option>
+                                <option value="diazepam" data-dose-metric="0.2" data-dose-imperial="0.09" data-concentration="5">Diazepam (5 mg/mL)</option>
+                                <option value="midazolam" data-dose-metric="0.2" data-dose-imperial="0.09" data-concentration="5">Midazolam (5 mg/mL)</option>
+                                <option value="etomidate" data-dose-metric="1" data-dose-imperial="0.45" data-concentration="2">Etomidate (2 mg/mL)</option>
+                                <option value="alfaxalone" data-dose-metric="2" data-dose-imperial="0.9" data-concentration="10">Alfaxalone (10 mg/mL)</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="anesthesia-dose">Dose (mg/kg or mg/lb):</label>
-                            <input type="number" class="form-control" id="anesthesia-dose" step="0.1" min="0">
+                            <label for="anesthesia-weight">Weight:</label>
+                            <input type="number" class="form-control" id="anesthesia-weight" step="0.1" min="0">
                         </div>
                         <button class="btn btn-primary" onclick="calculateAnesthesia()">Calculate</button>
                         <div id="anesthesia-result" class="mt-3"></div>
@@ -193,8 +200,8 @@
                                         <button type="button" class="close" data-dismiss="modal">×</button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Calculates the total drug amount needed for anesthesia.</p>
-                                        <p>Formula: Weight (kg or lb) × Dose (mg/kg or mg/lb) = Total Drug (mg)</p>
+                                        <p>Calculates the volume (mL) of anesthesia drug to draw up based on weight and selected drug’s default dose and concentration.</p>
+                                        <p>Formula: [Weight (kg) × Dose (mg/kg)] / Concentration (mg/mL) = Volume (mL)</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
